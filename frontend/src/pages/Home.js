@@ -22,7 +22,7 @@ function Home() {
 
     const fetchProducts = async () => {
         try {
-            const url = "https://login-api-henna.vercel.app/products";
+            const url = "https://login-backend-indol.vercel.app/products";
             const headers = {
                 headers: {
                     'Authorization': localStorage.getItem('token')

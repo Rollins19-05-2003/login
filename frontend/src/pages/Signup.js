@@ -27,11 +27,7 @@ function Signup() {
             return handleError('name, email and password are required')
         }
         try {
-<<<<<<< HEAD
-            const url = "http://localhost:8080/auth/signup";
-=======
-            const url = "https://login-api-henna.vercel.app/auth/signup";
->>>>>>> 01ba82402e89cffdfd580a3d8328c99e493ab962
+            const url = "https://login-backend-indol.vercel.app/auth/signup";
             const response = await fetch(url, {
                 method: "POST",
                 headers: {
