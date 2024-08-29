@@ -22,7 +22,7 @@ function Home() {
 
     const fetchProducts = async () => {
         try {
-            const url = "https://login-backend-taupe.vercel.app/products";
+            const url = "http://localhost:8080/products";
             const headers = {
                 headers: {
                     'Authorization': localStorage.getItem('token')
