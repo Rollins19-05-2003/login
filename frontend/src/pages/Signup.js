@@ -27,7 +27,7 @@ function Signup() {
             return handleError('name, email and password are required')
         }
         try {
-            const url = `http://localhost:8080/auth/signup`;
+            const url = "http://localhost:8080/auth/signup";
             const response = await fetch(url, {
                 method: "POST",
                 headers: {
@@ -54,46 +54,51 @@ function Signup() {
         }
     }
     return (
-        <div className='container'>
-            <h1>Signup</h1>
+        <div className='bg-gray-400 h-screen'>
+            <div className='w-4/12 bg-black bg-opacity-85 relative top-[25%] left-[30%] p-20 rounded-lg'>
+            <h1 className='text-2xl text-center text-white'>Sign up form</h1>
             <form onSubmit={handleSignup}>
-                <div>
-                    <label htmlFor='name'>Name</label>
+            <div className='my-2'>
+                    <label htmlFor='name' className='font-semibold p-2 text-white'>Name : </label>
                     <input
                         onChange={handleChange}
                         type='text'
                         name='name'
-                        autoFocus
                         placeholder='Enter your name...'
                         value={signupInfo.name}
+                        className=' bg-transparent p-2 border-b-2 text-white'
                     />
                 </div>
-                <div>
-                    <label htmlFor='email'>Email</label>
+                <div className='my-2'>
+                    <label htmlFor='email' className='font-semibold p-2 text-white'>Email : </label>
                     <input
                         onChange={handleChange}
                         type='email'
                         name='email'
                         placeholder='Enter your email...'
                         value={signupInfo.email}
+                        className=' bg-transparent p-2 border-b-2 text-white'
                     />
                 </div>
-                <div>
-                    <label htmlFor='password'>Password</label>
+                <div className='my-2'>
+                    <label htmlFor='password' className='font-semibold p-2 text-white'>Password : </label>
                     <input
                         onChange={handleChange}
                         type='password'
                         name='password'
                         placeholder='Enter your password...'
                         value={signupInfo.password}
+                        className=' p-2 bg-transparent border-b-2 text-white'
                     />
                 </div>
-                <button type='submit'>Signup</button>
-                <span>Already have an account ?
-                    <Link to="/login">Login</Link>
+                <button type='submit' className='bg-red-500 py-2 px-4 rounded-sm text-white font-semibold  ml-32 my-5'>Sign up</button>
+                <br></br>
+                <span className='font-semibold text-white'>Already an user ?
+                    <Link to="/login" className='text-blue-500'> Login</Link>
                 </span>
             </form>
             <ToastContainer />
+            </div>
         </div>
     )
 }

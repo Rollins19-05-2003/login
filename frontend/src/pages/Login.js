@@ -57,35 +57,40 @@ function Login() {
     }
 
     return (
-        <div className='container'>
-            <h1>Login</h1>
+        <div className='bg-gray-400 h-screen'>
+            <div className='w-4/12 bg-black bg-opacity-85 relative top-[25%] left-[30%] p-20 rounded-lg'>
+            <h1 className='text-2xl text-center text-white'>Login form</h1>
             <form onSubmit={handleLogin}>
-                <div>
-                    <label htmlFor='email'>Email</label>
+                <div className='my-2'>
+                    <label htmlFor='email' className='font-semibold p-2 text-white'>Email : </label>
                     <input
                         onChange={handleChange}
                         type='email'
                         name='email'
                         placeholder='Enter your email...'
                         value={loginInfo.email}
+                        className=' bg-transparent p-2 border-b-2 text-white'
                     />
                 </div>
-                <div>
-                    <label htmlFor='password'>Password</label>
+                <div className='my-2'>
+                    <label htmlFor='password' className='font-semibold p-2 text-white'>Password : </label>
                     <input
                         onChange={handleChange}
                         type='password'
                         name='password'
                         placeholder='Enter your password...'
                         value={loginInfo.password}
+                        className=' p-2 bg-transparent border-b-2 text-white'
                     />
                 </div>
-                <button type='submit'>Login</button>
-                <span>Does't have an account ?
-                    <Link to="/signup">Signup</Link>
+                <button type='submit' className='bg-red-500 py-2 px-4 rounded-sm text-white font-semibold  ml-32 my-5'>Login</button>
+                <br></br>
+                <span className='font-semibold text-white'>Does't have an account ?
+                    <Link to="/signup" className='text-blue-500'> Signup now</Link>
                 </span>
             </form>
             <ToastContainer />
+            </div>
         </div>
     )
 }
