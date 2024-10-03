@@ -5,6 +5,7 @@ import Signup from './pages/Signup';
 import Home from './pages/Home';
 import { useState } from 'react';
 import RefrshHandler from './RefrshHandler';
+import Reset from './pages/Reset';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -20,6 +21,7 @@ function App() {
         <Route path='/' element={<Navigate to="/login" />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
+        <Route path='/reset' element={<Reset />} />
         <Route path='/home' element={<PrivateRoute element={<Home />} />} />
       </Routes>
     </div>

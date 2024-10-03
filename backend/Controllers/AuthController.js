@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const UserModel = require("../Models/User");
-
+var nodemailer = require("nodemailer");
 
 const signup = async (req, res) => {
     try {
@@ -68,7 +68,48 @@ const login = async (req, res) => {
     }
 }
 
+const reset = async (req, res) => {
+    const { email } = req.body;
+    try {
+      const oldUser = await UserModel.findOne({ email });
+      if (!oldUser) {
+        return res.json({ status: "User Not Exists!!" });
+      }
+      const secret = process.env.JWT_SECRET + oldUser.password;
+      const token = jwt.sign({ email: oldUser.email, id: oldUser._id }, secret, {
+        expiresIn: "5m",
+      });
+      const link = `http://localhost:8080/reset-password/${oldUser._id}/${token}`;
+      console.log(link);
+
+   
+      var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: 'sdeb7433@gmail.com',
+          pass: 'awausrilzdsljvji'
+        }
+      });
+      
+      var mailOptions = {
+        from: 'sdeb7433@gmail.com',
+        to: 'sdev795001@gmail.com',
+        subject: 'Password Reset',
+        text: "Click the below link to set the Password. This link will expired in 5 minutes\n" + link
+      };
+      
+    // Using async/await for better error handling
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Email sent: ' + info.response);  
+
+  } catch (error) {
+    console.error("Error during password reset:", error);  
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+}
+
 module.exports = {
     signup,
-    login
+    login,
+    reset
 }

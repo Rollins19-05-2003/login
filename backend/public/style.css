@@ -1,0 +1,60 @@
+/* General page styling */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #222; /* Black background */
+    color: #fff; /* White text */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Center the form on the page */
+  .form-container {
+    background-color: #333; /* Slightly lighter black for form background */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 450px;
+    text-align: center;
+  }
+  
+  /* Form title styling */
+  .form-title {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+  }
+  
+  /* Input field styling */
+  .form-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #444; /* Darker input background */
+    color: #fff; /* White text for inputs */
+    font-size: 1rem;
+  }
+  
+  /* Submit button styling */
+  .form-button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #e50914; /* Red button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  /* Button hover effect */
+  .form-button:hover {
+    background-color: #b50710; /* Darker red on hover */
+  }
+  

@@ -83,9 +83,14 @@ function Login() {
                         className=' p-2 bg-transparent border-b-2 text-white'
                     />
                 </div>
+                <div className='flex'>
+                    <span className='text-white ml-48 my-5'>Forgot Password? 
+                        <Link to="/reset" className='text-blue-700 cursor-pointer'>Click Here</Link>
+                    </span>
+                </div>
                 <button type='submit' className='bg-red-500 py-2 px-4 rounded-sm text-white font-semibold  ml-32 my-5'>Login</button>
                 <br></br>
-                <span className='font-semibold text-white'>Does't have an account ?
+                <span className='font-semibold text-white'>Doesn't have an account ?
                     <Link to="/signup" className='text-blue-500'> Signup now</Link>
                 </span>
             </form>
